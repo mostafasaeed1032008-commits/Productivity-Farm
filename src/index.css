@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+@config '../tailwind.config.ts';
+
+:root {
+  --color-deep: #0a0b0f;
+  --color-surface: rgba(18, 20, 28, 0.72);
+  --color-accent: #7c6cf6;
+  --color-gold: #ffd54f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: 'Tajawal', 'Inter', sans-serif;
+  background: var(--color-deep);
+  color: #e8eaef;
+  direction: rtl;
+}
+
+.font-mono-num {
+  font-family: 'JetBrains Mono', monospace;
+  direction: ltr;
+  display: inline-block;
+}
+
+.glass {
+  background: var(--color-surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+.plot-ready {
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0.3;
+  }
+}
+
+.rain-drop {
+  animation: rain-fall linear infinite;
+}
+
+@keyframes leaf-float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(20px, -30px) rotate(15deg);
+  }
+}
+
+.leaf-float {
+  animation: leaf-float 4s ease-in-out infinite;
+}
